@@ -7,13 +7,11 @@ app.use(cors());
 
 app.use(express.json());
 
-const { getCompliment, getTaco } = require('./controller')
-
 const { getFortune } = require("../server/controller");
 
-const { getAcnh } = require("./controller")
+const { getCompliment, getAcnh, getTaco, postTaco } = require('./controller');
 
-const { postInspration } = require("./controller")
+const { postAcnh } = require("./controller");
 
 app.get("/api/compliment", getCompliment);
 
@@ -23,7 +21,10 @@ app.get("/api/acnh", getAcnh);
 
 app.get("/api/taco", getTaco);
 
-app.post("/api/inspration", postInspration);
+app.post("/api/taco", postTaco);
+
+app.post("/api/acnh", postAcnh);
+
 
 // app.post("/api/acnh", (request, response) => {
 //     acnh.push(request.body)
